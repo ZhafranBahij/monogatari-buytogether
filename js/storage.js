@@ -1,9 +1,9 @@
 /* global monogatari */
 
 // Persistent Storage Variable
-monogatari.storage ({
-	player: {
-		name: '',
-		trust: 5,
-	}
+monogatari.storage({
+  player: {
+    name: "Lorem",
+    trust: 5,
+  },
 });

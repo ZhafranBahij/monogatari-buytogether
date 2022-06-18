@@ -23,10 +23,16 @@ body {
 
 /* Simple Button styles*/
 button {
+  background: rgb(20, 39, 163, 0.5);
 }
 
 /* Simple Button Style on Hover */
 button:hover {
+  background: rgb(20, 39, 163, 0.7);
+}
+
+button:focus {
+  border-color: rgb(154, 154, 250);
 }
 
 /* General Styling for Menu Screens */
@@ -41,10 +47,15 @@ button:hover {
 
 /* Main Menu Styling */
 [data-screen="main"] {
+  background: url("../assets/scenes/Sumi_CG_Winter_Smile.png");
+  background-size: cover;
 }
 
 /* Main Menu Buttons Styling */
 [data-screen="main"] button {
+}
+
+[data-screen="main"] button:hover {
 }
 
 /**
@@ -85,10 +96,19 @@ button:hover {
 
 /* Text Box styling */
 [data-component="text-box"] {
+  overflow: visible;
+  /* background-color: rgb(230, 230, 230, 0.65); */
+  color: #e6e6e6;
 }
 
 /* Character Name Style */
 [data-ui="who"] {
+  display: block;
+  position: relative;
+  top: -1em;
+  background: #3d56b2;
+  width: 25%;
+  border-radius: 0 25px 25px 0;
 }
 
 /* Style for Centered Text */
@@ -113,10 +133,12 @@ button:hover {
 
 /* Quick Menu Style */
 [data-component="quick-menu"] {
+  /* background-color: rgb(230, 230, 230, 0.65); */
 }
 
 /* Quick Menu Buttons Style */
 [data-component="quick-menu"] span {
+  color: #e6e6e6;
 }
 
 /* Quick Menu Buttons Style on Hover */
@@ -198,8 +220,4 @@ input[type="range"]::-ms-fill-upper {
 
 /** 8k Screens, Large Devices, Wide Screens (8000px) **/
 @media screen and (min-width: 500em) {
-}
-
-h1 .main-title {
-  color: blue;
 }

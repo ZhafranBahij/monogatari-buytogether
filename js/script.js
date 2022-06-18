@@ -70,6 +70,10 @@ monogatari.characters({
       surprised: "./Ren/Sumi_WinterUni_Open.png",
     },
   },
+  player: {
+    name: "Shien",
+    color: "#5bcaff",
+  },
 });
 function trustIssues(minus) {
   monogatari.storage().player.trust = monogatari.storage().player.trust - minus;
@@ -98,7 +102,7 @@ monogatari.script({
     "ren I thought, you forgot about our promise.",
     {
       Choice: {
-        Dialog: "Why i am late?",
+        Dialog: "player Why i am late?",
         game: {
           Text: "Playing game",
           Do: "jump gameExcuse",
@@ -112,11 +116,11 @@ monogatari.script({
   ],
 
   gameExcuse: [
-    "Well, of course I'm playing some game. I forgot that our promise did it one hour ago",
+    "player Well, of course I'm playing some game. I forgot that our promise did it one hour ago",
     "ren Hffttt... For this time, I forgive you for this.",
     "show character ren sad at center with fadeIn",
     "ren However, if you repeat it again, I don't want to meet you for 1 month.",
-    "(So Scary)",
+    "player (So Scary)",
     {
       Function: {
         Apply: () => {
@@ -148,13 +152,13 @@ monogatari.script({
   ],
 
   lostExcuse: [
-    "I lost. 15 minutes before the time we promised, I was going to this place, but I can't find it the exactly place",
+    "player I lost. 15 minutes before the time we promised, I was going to this place, but I can't find it the exactly place",
     "show character ren surprised at center with fadeIn",
     "ren Are you kidding? You get lost in 1 hour.",
     "show character ren normal at center with fadeIn",
     "ren Hffttt... It's unbelievable.",
     "ren For now, I want to trust you for that reason.",
-    "Thank You!",
+    "player Thank You!",
     {
       Function: {
         Apply: () => {
@@ -188,7 +192,7 @@ monogatari.script({
     "show character ren normal at center with fadeIn",
     "ren Okay...",
     "ren We will go to warteg, so prepare yourself.",
-    "(Warteg? What is warteg? I didn't hear that for a long time)",
+    "player (Warteg? What is warteg? I didn't hear that for a long time)",
     "jump Warteg",
   ],
 
@@ -200,7 +204,7 @@ monogatari.script({
     "ren We can choose food by pointing the food we want.",
     "ren But, it will be better if you say the name of the food.",
     "ren In this warteg, you can choose the food in second floor and eat the food in first floor.",
-    "Hmmm, so, if we want to take some food, we can go to second floor and eat the food in first floor, right?",
+    "player Hmmm, so, if we want to take some food, we can go to second floor and eat the food in first floor, right?",
     "ren Yeahh, you're right.",
     "jump WartegChoice",
   ],
@@ -221,16 +225,16 @@ monogatari.script({
           Text: "Let's Together",
           Do: "jump Together",
         },
-        ask: {
-          Text: "ask",
-          Do: "jump Ask",
-        },
+        // ask: {
+        //   Text: "ask",
+        //   Do: "jump Ask",
+        // },
       },
     },
   ],
 
   Me: [
-    "I wanna buy it for you!",
+    "player I wanna buy it for you!",
     "ren Thanks",
     {
       Function: {
@@ -274,17 +278,18 @@ monogatari.script({
   ],
 
   Take: [
-    "Do you want to buy our lunch with your money? Thank you very much",
+    "player Do you want to buy our lunch with your money? Thank you very much",
     "ren Don't mind",
+    "end",
   ],
 
   Reject: [
-    "Thank you, but I have some money to buy our lunch!",
+    "player Thank you, but I have some money to buy our lunch!",
     "ren Do you have enough money?",
     "show character ren angry at center with fadeIn",
     "ren Because, my food's price is 10k. I won't burden you too take some responsbility to buy me a food.",
-    "Ok-ok, I'll take your money, but I just want to take 10k.",
-    "I want to buy my food with my money and I don't want to burden you too.",
+    "player Ok-ok, I'll take your money, but I just want to take 10k.",
+    "player I want to buy my food with my money and I don't want to burden you too.",
     "show character ren happy at center with fadeIn",
     "ren Thanks.",
     {
@@ -317,19 +322,19 @@ monogatari.script({
   ],
 
   You: [
-    "...",
-    "...",
+    "player ...",
+    "player ...",
     "show character ren embarrassed at center with fadeIn",
     "ren Ok-oke, I'll buy it for you. So please, don't stare me like that.",
-    "Thank you so much, Ren!",
+    "player Thank you so much, Ren!",
     "show character ren angry at center with fadeIn",
     "ren Yeahh, but don't forget to get a place, right?",
-    "Ok-ok, leave it to me!",
+    "player Ok-ok, leave it to me!",
     "end",
   ],
 
   Ask: [
-    "Hmm, if I buy it, am I buy the meal for you too?",
+    "player Hmm, if I buy it, am I buy the meal for you too?",
     "ren Hmm.... maybe yes or no. You buy some food for you and me, but you can buy it by my money.",
     "ren I can give you some money to buy the meal.",
     "ren Well, if you choose me to buy it, you must find a place to take a lunch before there is no empty place to eat.",
@@ -337,8 +342,8 @@ monogatari.script({
   ],
 
   Together: [
-    "Let's go together. Because I wanna be with you.",
-    "In this res- warteg, it's not crowded at all. So, we don't need to take a place before buy some lunch.",
+    "player Let's go together. Because I wanna be with you.",
+    "player In this res- warteg, it's not crowded at all. So, we don't need to take a place before buy some lunch.",
     "show character ren surprised at center with fadeIn",
     "ren ....",
     "ren ....",
