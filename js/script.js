@@ -75,21 +75,26 @@ monogatari.characters({
     color: "#5bcaff",
   },
 });
-function trustIssues(minus) {
-  monogatari.storage().player.trust = monogatari.storage().player.trust - minus;
 
-  // We add the 20 points and update the value
-  // in a single step
-  // monogatari.storage({
-  //   player: {
-  //     trust: trust - minus,
-  //   },
-  // });
+monogatari.configuration("credits", {
+  Developers: {
+    Programmer: "<a href='https://github.com/ZhafranBahij'>Zhafran Bahij</a>",
+    "Scenario Writer":
+      "<a href='https://twitter.com/RainfogM'>Rainfog Muzaba</a>",
+  },
+  Art: {
+    Character:
+      "<a href='https://noranekogames.itch.io/sumifreecharactersprite'>Noranekogames</a>",
+    Background:
+      "<a href='https://noranekogames.itch.io/yumebackground'>Noranekogames</a>",
+  },
+  "Special Thanks to": {
+    "My parents": ["Mom", "Dad"],
+    "My siblings": ["Brother"],
+    "My tomodachi": ["Friends"],
+  },
+});
 
-  // console.log(trust);
-
-  return true;
-}
 monogatari.script({
   // The game starts here.
   Start: [
@@ -280,7 +285,7 @@ monogatari.script({
   Take: [
     "player Do you want to buy our lunch with your money? Thank you very much",
     "ren Don't mind",
-    "end",
+    "jump Lunch",
   ],
 
   Reject: [
@@ -318,11 +323,13 @@ monogatari.script({
       },
     },
     "After this, your trust points with Ren is {{player.trust}}",
-    "end",
+    "jump Lunch",
   ],
 
   You: [
     "player ...",
+    //Buat nungguin
+    "wait 1000",
     "player ...",
     "show character ren embarrassed at center with fadeIn",
     "ren Ok-oke, I'll buy it for you. So please, don't stare me like that.",
@@ -330,7 +337,7 @@ monogatari.script({
     "show character ren angry at center with fadeIn",
     "ren Yeahh, but don't forget to get a place, right?",
     "player Ok-ok, leave it to me!",
-    "end",
+    "jump Lunch",
   ],
 
   Ask: [
@@ -376,6 +383,156 @@ monogatari.script({
     },
 
     "After this, your trust points with Ren is {{player.trust}}",
-    "end",
+    "jump Lunch",
   ],
+
+  Lunch: [
+    "The narrator to lazy to build some narration in some choice, so we continue to the part that Shien and Ren eating together.",
+    "player Let's ea-",
+    "ren Ehemm!!",
+    "player What's wrong, Ren?",
+    "ren Maybe, we can pray before we eat something. It's so rude that we eat without pray before that.",
+    "player Well, you're right. So, let's pray.",
+    "ren *node*",
+    "player (We pray together before we eat).",
+    "After that, we eat the food we want.",
+    "player (Sometimes, I see her face when she eats.)",
+    "player (Her face is so cute and she is so kind to me.",
+    "player (I didn't know the reason, why she bring me to this place).",
+    "player (It's like, She treat me specially than anyone).",
+    "ren The food is great! You know when the rice, sambal, and orek tempe combine to each other.",
+    "ren It will be perfect lunch!",
+    {
+      Choice: {
+        disagree: {
+          Text: "Disagree",
+          Do: "jump Disagree",
+        },
+        agree: {
+          Text: "Agree",
+          Do: "jump Agree",
+        },
+      },
+    },
+  ],
+
+  Agree: [
+    "player Yeahh, i like it too! I'm surprised that some cheap food can be super delicious food!!!",
+    "ren So so, you're right! The food is superb!!",
+    {
+      Function: {
+        Apply: () => {
+          // We'll overwrite the player's name but save the old one in a new
+          // value so that we can roll back and restore it if needed.
+          const trust = monogatari.storage("player").trust;
+          monogatari.storage({
+            player: {
+              name: "",
+              trust: trust + 2,
+            },
+          });
+        },
+        Revert: () => {
+          // When rolling back, we'll restore the name to what it was before.
+          const trust = monogatari.storage("player").trust;
+          monogatari.storage({
+            player: {
+              name: "",
+              trust: trust - 2,
+            },
+          });
+        },
+      },
+    },
+    "After this, your trust points with Ren is {{player.trust}}",
+    "jump nextLunch",
+  ],
+
+  Disagree: [
+    "player I didn't expect you to say that. Because, the food's price is cheap. I don't know that you like some cheap food.",
+    "ren The perfect food is the food that you convinent with the price and delicious.",
+    "ren Besides, you can take pay some cheap price for a large portion.",
+    "ren I like some cheap food that take more portion than an expensive food with small portion.",
+    {
+      Function: {
+        Apply: () => {
+          // We'll overwrite the player's name but save the old one in a new
+          // value so that we can roll back and restore it if needed.
+          const trust = monogatari.storage("player").trust;
+          monogatari.storage({
+            player: {
+              name: "",
+              trust: trust - 1,
+            },
+          });
+        },
+        Revert: () => {
+          // When rolling back, we'll restore the name to what it was before.
+          const trust = monogatari.storage("player").trust;
+          monogatari.storage({
+            player: {
+              name: "",
+              trust: trust + 1,
+            },
+          });
+        },
+      },
+    },
+
+    "After this, your trust points with Ren is {{player.trust}}",
+    "jump nextLunch",
+  ],
+
+  nextLunch: [
+    "After some dialogue, we finished eating and than...",
+    {
+      Choice: {
+        tidy: {
+          Text: "Tidy the table",
+          Do: "jump Tidy",
+        },
+        ignore: {
+          Text: "Ignore",
+          Do: "jump Ignore",
+        },
+      },
+    },
+  ],
+
+  Tidy: [
+    "player (I tidy up the table because it's a moral value in society).",
+    "ren Let me help you!",
+    "player (Ren and I tidy up the table together.)",
+    "After that, we leave from the warteg.",
+    {
+      Function: {
+        Apply: () => {
+          // We'll overwrite the player's name but save the old one in a new
+          // value so that we can roll back and restore it if needed.
+          const trust = monogatari.storage("player").trust;
+          monogatari.storage({
+            player: {
+              name: "",
+              trust: trust + 1,
+            },
+          });
+        },
+        Revert: () => {
+          // When rolling back, we'll restore the name to what it was before.
+          const trust = monogatari.storage("player").trust;
+          monogatari.storage({
+            player: {
+              name: "",
+              trust: trust - 1,
+            },
+          });
+        },
+      },
+    },
+
+    "After this, your trust points with Ren is {{player.trust}}",
+    "jump Ending",
+  ],
+
+  Ending: ["end"],
 });
