@@ -68,6 +68,7 @@ monogatari.assets("images", {});
 // Define the backgrounds for each scene.
 monogatari.assets("scenes", {
   city: "City_Morning.png",
+  cityNight: "City_Night.png",
   warteg: "Cafeteria_Day.png",
 });
 

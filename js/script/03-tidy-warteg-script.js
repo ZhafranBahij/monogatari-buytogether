@@ -128,6 +128,7 @@ monogatari.script({
     "player Honestly, you can do this alone, right?",
     "player Logically, you can do this alone just in 10 seconds, right?",
     "player So, you can do this alone.",
+    "show character ren angry at center with fadeIn",
     "ren BAKA!!",
     {
       Function: {
@@ -155,6 +156,6 @@ monogatari.script({
       },
     },
     "After this, your trust points with Ren is {{player.trust}}",
-    "jump Ending",
+    "jump yosh",
   ],
 });
