@@ -2,7 +2,7 @@ monogatari.script({
   yosh: [
     "show scene cityNight with fadeIn",
 
-    "jump trueEnd",
+    "jump happyEnd",
     {
       Conditional: {
         Condition: function () {
@@ -21,9 +21,35 @@ monogatari.script({
     },
   ],
 
+  happyEnd: [
+    "show character ren happy at center with fadeIn",
+    "ren Shien, I didn't know you're an amazing person!",
+    "player Nope, i'm not amazing at all. You're greater than me in any aspect.",
+    "ren You're too exageratted. I'm not so amazing.",
+    "ren But, thanks.... I didn't know this day can be so beautiful.",
+    "ren ...",
+    "wait 1000",
+    "ren Maybe, I have one request for you. Do you wanna fulfill it?",
+    "player It depends on your request, but if I can, I wanna do it.",
+    "ren Are you sure?",
+    "player *node*",
+    "ren Can you join to my study group? For now until 6 months later.",
+    "ren from Interaction that we did before went to warteg until now.",
+    "ren You're a reliable person. So...",
+    "ren See you tomorrow!",
+    "hide character ren with fadeOut",
+    "player (But ren...)",
+    "player (This world is full of lie, so I'm just show you a good side from me)",
+    "player (I make you happy not for you)",
+    "player (It because...)",
+    "player (I wanna reach the happy ending in this game)",
+    "end",
+  ],
+
   normalEnd: [
+    "show character ren normal at center with fadeIn",
     "ren So...",
-    "wait 3000",
+    "wait 1000",
     "ren Bye bye, Shien...",
     "player Bye bye, Ren...",
     "player (Ren and I just a normal friend.)",
@@ -46,6 +72,7 @@ monogatari.script({
     "player For Example...",
     "player *tick*",
     "show scene warteg with fadeIn",
+    "show character ren sad at center with fadeIn",
     "player Normally, you can't teleport to the place you want, but..",
     "player You can do this in this world",
     "show character ren surprised at center with fadeIn",
@@ -60,34 +87,12 @@ monogatari.script({
     "player It's just a merely human like me, but he lives in another dimension.",
     "player But first",
     "show scene #000000",
+    "show character ren sad at center with fadeIn",
     "player *Push Ren into dark room*",
-    "player Your memories will be lose and good bye REN!",
-    "wait 1500",
-    {
-      Function: {
-        Apply: () => {
-          // We'll overwrite the player's name but save the old one in a new
-          // value so that we can roll back and restore it if needed.
-          monogatari.storage({
-            player: {
-              name: "",
-              trust: 5,
-            },
-          });
-        },
-        Revert: () => {
-          // When rolling back, we'll restore the name to what it was before.
-          monogatari.storage({
-            player: {
-              name: "",
-              trust: 5,
-            },
-          });
-          s;
-        },
-      },
-    },
-    "jump Start",
+    "hide character ren with fadeOut",
+    "player Your memories will be lose and good bye...",
+    "wait 750",
+    "player This Fake World",
     "end",
   ],
 });

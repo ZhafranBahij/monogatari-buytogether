@@ -48,7 +48,7 @@ monogatari.script({
     },
 
     "After this, your trust points with Ren is {{player.trust}}",
-    "jump Ending",
+    "jump yosh",
   ],
 
   Ignore: [
@@ -122,7 +122,7 @@ monogatari.script({
     },
 
     "After this, your trust points with Ren is {{player.trust}}",
-    "jump Ending",
+    "jump yoshs",
   ],
   Tidyno: [
     "player Honestly, you can do this alone, right?",

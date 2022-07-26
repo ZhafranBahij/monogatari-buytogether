@@ -92,12 +92,45 @@ monogatari.characters({
   },
 });
 
+class MyAction extends Monogatari.Action {
+  static matchString([action]) {
+    return action === "myaction";
+  }
+
+  constructor([myaction, ...args]) {
+    super();
+  }
+
+  apply() {
+    monogatari.storage({
+      player: {
+        name: "",
+        trust: 10,
+      },
+    });
+  }
+
+  revert() {
+    monogatari.storage({
+      player: {
+        name: "",
+        trust: 10,
+      },
+    });
+  }
+}
+
+MyAction.id = "MyAction";
+
+monogatari.registerAction(MyAction);
+
 monogatari.script({
   // The game starts here.
   Start: [
     "play music normalMusic with loop",
     "show scene city with fadeIn",
     // "show notification Welcome",
+    "myaction something",
     "show character ren angry at center with fadeIn",
     "ren Why are you late?",
     "ren One hour ago, we supposed to meet each other in here, but you didn't come.",
