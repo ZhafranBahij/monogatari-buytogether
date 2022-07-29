@@ -51,6 +51,9 @@ monogatari.assets("gallery", {});
 // Define the music used in the game.
 monogatari.assets("music", {
   normalMusic: "./normal-theme.mp3",
+  lastMusic: "./dead-by-daylight-10243.mp3",
+  romanceMusic: "./beautiful-piano-115480.mp3",
+  sadMusic: "./emotional-piano-sad-background-music-for-videos-5688.mp3",
 });
 
 // Define the voice files used in the game.
@@ -130,7 +133,7 @@ monogatari.script({
     "play music normalMusic with loop",
     "show scene city with fadeIn",
     // "show notification Welcome",
-    "myaction something",
+    // "myaction something",
     "show character ren angry at center with fadeIn",
     "ren Why are you late?",
     "ren One hour ago, we supposed to meet each other in here, but you didn't come.",

@@ -1,5 +1,7 @@
 monogatari.script({
   nextLunch: [
+    "stop music",
+    "play music normalMusic with loop with fade 1",
     "After some conversation, we finished eating and than...",
     {
       Choice: {
@@ -53,6 +55,8 @@ monogatari.script({
 
   Ignore: [
     "show character ren normal at center with fadeIn",
+    "stop music",
+    "play music sadMusic with loop with fade 1",
     "ren Maybe, before we leave, I think we could tidying up the table.",
     "player Why we do that? I don't think it's useful and it is a jobdesc for the waiter and employer in here, right?",
     "ren Well, that's true, but it will lighten up the job of employer, right?",
@@ -90,6 +94,8 @@ monogatari.script({
   ],
 
   Tidyyes: [
+    "stop music",
+    "play music normalMusic with loop with fade 1",
     "player Okay, I'll help you.",
     "show character ren happy at center with fadeIn",
     "ren Thanks!",
