@@ -149,6 +149,7 @@ monogatari.script({
   Together: [
     "player Let's go together. Because I wanna be with you.",
     "stop music normalMusic with fade 1",
+    "wait 500",
     "play music romanceMusic with loop with fade 1",
     "player In this res- warteg, it's not crowded at all. So, we don't need to take a place before buy some lunch.",
     "show character ren surprised at center with fadeIn",

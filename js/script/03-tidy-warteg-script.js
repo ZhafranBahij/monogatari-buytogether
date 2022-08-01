@@ -1,6 +1,7 @@
 monogatari.script({
   nextLunch: [
-    "stop music",
+    "stop music with fade 1",
+    "wait 500",
     "play music normalMusic with loop with fade 1",
     "After some conversation, we finished eating and than...",
     {
@@ -55,9 +56,10 @@ monogatari.script({
 
   Ignore: [
     "show character ren normal at center with fadeIn",
-    "stop music",
-    "play music sadMusic with loop with fade 1",
     "ren Maybe, before we leave, I think we could tidying up the table.",
+    "stop music with fade 1",
+    "wait 500",
+    "play music sadMusic with loop with fade 1",
     "player Why we do that? I don't think it's useful and it is a jobdesc for the waiter and employer in here, right?",
     "ren Well, that's true, but it will lighten up the job of employer, right?",
     "player (I don't understand about this. Why we tidying up the table who aren't our job?)",
@@ -94,7 +96,8 @@ monogatari.script({
   ],
 
   Tidyyes: [
-    "stop music",
+    "stop music with fade 1",
+    "wait 500",
     "play music normalMusic with loop with fade 1",
     "player Okay, I'll help you.",
     "show character ren happy at center with fadeIn",
@@ -128,9 +131,10 @@ monogatari.script({
     },
 
     "After this, your trust points with Ren is {{player.trust}}",
-    "jump yoshs",
+    "jump yosh",
   ],
   Tidyno: [
+    "wait 500",
     "player Honestly, you can do this alone, right?",
     "player Logically, you can do this alone just in 10 seconds, right?",
     "player So, you can do this alone.",

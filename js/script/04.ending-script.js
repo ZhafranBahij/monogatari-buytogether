@@ -1,29 +1,29 @@
 monogatari.script({
   yosh: [
     "show scene cityNight with fadeIn",
-
-    "jump happyEnd",
     {
       Conditional: {
         Condition: function () {
-          if (this.storage().trust >= 9) {
-            return "happy end";
-          } else if (this.storage().trust <= 0) {
-            return "true end";
+          console.log(this.storage().player.trust);
+          if (this.storage().player.trust >= 9) {
+            return "happy_end";
+          } else if (this.storage().player.trust <= 3) {
+            return "true_end";
           } else {
-            return "normal end";
+            return "normal_end";
           }
         },
-        "happy end": "jump happyEnd",
-        "normal end": "jump normalEnd",
-        "true end": "jump trueEnd",
+        happy_end: "jump happyEnd",
+        normal_end: "jump normalEnd",
+        true_end: "jump trueEnd",
       },
     },
   ],
 
   happyEnd: [
     "show character ren happy at center with fadeIn",
-    "stop music",
+    "stop music with fade 1",
+    "wait 500",
     "play music romanceMusic with loop with fade 1",
     "ren Shien, I didn't know you're an amazing person!",
     "player Nope, i'm not amazing at all. You're greater than me in any aspect.",
@@ -41,6 +41,7 @@ monogatari.script({
     "ren See you tomorrow!",
     "hide character ren with fadeOut",
     "stop music romanceMusic with fade 1",
+    "wait 500",
     "play music lastMusic with loop with fade 1",
     "player (But ren...)",
     "player (This world is full of lie, so I'm just show you a good side from me)",
@@ -61,6 +62,7 @@ monogatari.script({
     "player Bye bye, Ren...",
     "player (Ren and I just a normal friend)",
     "player (Yep, like a normal friend. There is no special feeling to her)",
+    "NORMALN ENDING",
     "end",
   ],
 
@@ -74,7 +76,8 @@ monogatari.script({
     "ren WH-",
     "player Because...",
     "wait 500",
-    "stop music",
+    "stop music with fade 1",
+    "wait 500",
     "play music lastMusic with loop with fade 1",
     "player You and I are not real anymore.",
     "player This world is full of lie.",

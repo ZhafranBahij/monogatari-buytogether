@@ -130,7 +130,7 @@ monogatari.registerAction(MyAction);
 monogatari.script({
   // The game starts here.
   Start: [
-    "play music normalMusic with loop",
+    "play music normalMusic with loop with fade 2",
     "show scene city with fadeIn",
     // "show notification Welcome",
     // "myaction something",
