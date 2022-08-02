@@ -91,7 +91,7 @@ monogatari.characters({
   },
   player: {
     name: "Shien",
-    color: "#5bcaff",
+    color: "#28BAFF",
   },
 });
 
@@ -132,8 +132,6 @@ monogatari.script({
   Start: [
     "play music normalMusic with loop with fade 2",
     "show scene city with fadeIn",
-    // "show notification Welcome",
-    // "myaction something",
     "show character ren angry at center with fadeIn",
     "ren Why are you late?",
     "ren One hour ago, we supposed to meet each other in here, but you didn't come.",
