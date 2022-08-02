@@ -11,6 +11,8 @@ Honestly, this VN was created by me, Rainfog, and you can check anything in crea
 A guy named Shien was invited by A normal girl who likes to eat cheap food Ren.
 But, some path you choose can make Shien know about the world he lives. Nahh, just kidding.
 
+Shien and Ren will eating in some Restaurant called Warteg. Simply, warteg is like a mini restaurant from Indonesian who serve a food with cheap price but extremely delicious.
+
 ## Gameplay
 
 ![Ren](./assets/scenes/Gameplay.png)
