@@ -126,7 +126,6 @@ monogatari.script({
 
   You: [
     "player ...",
-    //Buat nungguin
     "wait 1000",
     "player ...",
     "show character ren embarrassed at center with fadeIn",
@@ -184,6 +183,8 @@ monogatari.script({
     },
 
     "After this, your trust points with Ren is {{player.trust}}",
+    "stop music romanceMusic with fade 1",
+    "wait 500",
     "jump Lunch",
   ],
 });

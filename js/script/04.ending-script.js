@@ -22,7 +22,6 @@ monogatari.script({
 
   happyEnd: [
     "show character ren happy at center with fadeIn",
-    "stop music with fade 1",
     "wait 500",
     "play music romanceMusic with loop with fade 1",
     "ren Shien, I didn't know you're an amazing person!",
@@ -62,11 +61,12 @@ monogatari.script({
     "player Bye bye, Ren...",
     "player (Ren and I just a normal friend)",
     "player (Yep, like a normal friend. There is no special feeling to her)",
-    "NORMALN ENDING",
+    "NORMAL ENDING",
     "end",
   ],
 
   trueEnd: [
+    "play music sadMusic with loop with fade 1",
     "show character ren normal at center with fadeIn",
     "ren So...",
     "show character ren angry at center with fadeIn",
@@ -76,7 +76,7 @@ monogatari.script({
     "ren WH-",
     "player Because...",
     "wait 500",
-    "stop music with fade 1",
+    "stop music sadMusic with fade 1",
     "wait 500",
     "play music lastMusic with loop with fade 1",
     "player You and I are not real anymore.",

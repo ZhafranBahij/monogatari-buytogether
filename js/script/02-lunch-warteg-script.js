@@ -1,7 +1,5 @@
 monogatari.script({
   Lunch: [
-    "stop music with fade 1",
-    "wait 500",
     "play music normalMusic with loop with fade 1",
     "The narrator to lazy to build some narration in some choice, so we continue to the part that Shien and Ren eating together.",
     "player Let's ea-",
@@ -14,11 +12,11 @@ monogatari.script({
     "ren *node*",
     "player (We pray together before we eat).",
     "After that, we eat the food we want.",
-    "stop music with fade 1",
+    "stop music normalMusic with fade 1",
     "wait 500",
     "play music romanceMusic with loop with fade 1",
     "player (Sometimes, I see her face when she eats.)",
-    "player (Her face is so cute and she is so kind to me.",
+    "player (Her face is so cute and she is so kind to me.)",
     "player (I didn't know the reason, why she bring me to this place).",
     "player (It's like, She treat me specially than anyone).",
     "show character ren happy at center with fadeIn",
@@ -67,11 +65,12 @@ monogatari.script({
       },
     },
     "After this, your trust points with Ren is {{player.trust}}",
+    "stop music romanceMusic with fade 1",
     "jump nextLunch",
   ],
 
   Disagree: [
-    "stop music with fade 1",
+    "stop music romanceMusic with fade 1",
     "wait 500",
     "play music sadMusic with loop with fade 1",
     "player I didn't expect you to say that. Because, the food's price is cheap. I don't know that you like some cheap food.",
@@ -104,6 +103,7 @@ monogatari.script({
     },
 
     "After this, your trust points with Ren is {{player.trust}}",
+    "stop music sadMusic with fade 1",
     "jump nextLunch",
   ],
 });
