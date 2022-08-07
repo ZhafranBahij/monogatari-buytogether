@@ -4,7 +4,9 @@
 
 If you're expecting too much in this game, well don't expected it. It's just a simple VN that I created with [monogatari](https://developers.monogatari.io/documentation/) and it's my first time created it.
 
-Honestly, this VN was created by me, Rainfog, and you can check anything in created by section.
+Honestly, this VN was created by me, Rainfog, and you can check anything in "Created By" section.
+
+I forgot to tell you some information. You can play this game [in here](https://eat-together-rainfog.netlify.app/)
 
 ## Synopsis
 
